@@ -74,7 +74,7 @@ public class LruCache implements Cache {
     }
 
     int addedSize = Utils.getBitmapBytes(bitmap);
-    if (addedSize > maxSize) {
+    if (addedSize > maxSize || bitmap.isRecycled()) {
       return;
     }
 
